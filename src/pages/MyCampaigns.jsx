@@ -10,7 +10,7 @@ const MyCampaigns = () => {
     const userId=localStorage.getItem("donId")
     const getMyCampaigns=async()=>{
         try {
-            const res=await axios.post(`http://localhost:5500/campaigns/user/${userId}`,{items:items,page:page},{headers:{"Authorization":userToken}})
+            const res=await axios.post(`https://charity-vercel-4ebc.vercel.app/campaigns/user/${userId}`,{items:items,page:page},{headers:{"Authorization":userToken}})
             setMycamps(res.data.campaigns)
             setTotal(res.data.total)
         } catch (error) {

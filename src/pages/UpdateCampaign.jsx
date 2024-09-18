@@ -15,7 +15,7 @@ const CampaignDetailPage = () => {
 
   const getMyCampaigns = async () => {
     try {
-      const res = await axios.get(`http://localhost:5500/campaigns/${campaignId}`,{headers:{"Authorization":userToken}});
+      const res = await axios.get(`https://charity-vercel-4ebc.vercel.app/campaigns/${campaignId}`,{headers:{"Authorization":userToken}});
       setCampaign(res.data.campaign);
       setProducts(res.data.products);
     } catch (error) {
@@ -26,7 +26,7 @@ const CampaignDetailPage = () => {
 
   const deactivateCampaign=async()=>{
     try {
-       const res=await axios.post(`http://localhost:5500/campaigns/deactivate/${campaignId}`,{},{headers:{"Authorization":userToken}})
+       const res=await axios.post(`https://charity-vercel-4ebc.vercel.app/campaigns/deactivate/${campaignId}`,{},{headers:{"Authorization":userToken}})
        alert(res.data)
        setTrigger(!trigger)
     } catch (error) {
@@ -39,7 +39,7 @@ const CampaignDetailPage = () => {
         alert('Please enter a valid update message');
         return;
       }
-      await axios.post('http://localhost:5500/campaigns/addUpdate', {
+      await axios.post('https://charity-vercel-4ebc.vercel.app/campaigns/addUpdate', {
         campaignId: campaignId,
         title: updateValue,
       },{headers:{"Authorization":userToken}});

@@ -14,7 +14,7 @@ const Signup = ({ setIsAuth,setIsAdmin }) => {
         return;
       }
 
-      const res = await axios.post("http://localhost:5500/auth/signin", {
+      const res = await axios.post("https://charity-vercel-4ebc.vercel.app/auth/signin", {
         email: email,
         password: password
       });
