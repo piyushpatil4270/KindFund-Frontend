@@ -10,7 +10,7 @@ const CampaignCard = ({id,name,trigger,setTrigger,title,email,startedOn,imgUrl})
   };
   const handleApprove=async()=>{
     try {
-        const res=await axios.post("https://charity-vercel-4ebc.vercel.app/campaigns/approve",{campaignId:parseInt(id)},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-vercel.vercel.app/campaigns/approve",{campaignId:parseInt(id)},{headers:{"Authorization":userToken}})
         alert("Campaign verified")
         setTrigger(!trigger)
     } catch (error) {
@@ -19,7 +19,7 @@ const CampaignCard = ({id,name,trigger,setTrigger,title,email,startedOn,imgUrl})
     
   }
   const downloadImage = () => {
-    saveAs("https://charity-vercel-4ebc.vercel.app/uploads/"+imgUrl, 'application.jpg'); 
+    saveAs("https://charity-vercel.vercel.app/uploads/"+imgUrl, 'application.jpg'); 
   };
   return (
     <div className='border rounded p-4 shadow-md w-[300px]'>

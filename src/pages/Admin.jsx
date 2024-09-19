@@ -8,7 +8,7 @@ const Campaigns = () => {
    const [trigger,setTrigger]=useState(true)
   const getCampaigns = async () => {
     try {
-      const res = await axios.get(`https://charity-vercel-4ebc.vercel.app/campaigns/admin`,{headers:{"Authorization":userToken}});
+      const res = await axios.get(`https://charity-vercel.vercel.app/campaigns/admin`,{headers:{"Authorization":userToken}});
       setCampaigns(res.data);
     } catch (error) {
       console.log(error);

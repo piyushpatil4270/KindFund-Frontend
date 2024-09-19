@@ -7,7 +7,7 @@ const ProductCard = ({ product,setTrigger,trigger }) => {
   const [currentQuantity, setCurrentQuantity] = useState(product.currentQty);
  const handleUpdate=async()=>{
     try {
-        const res=await axios.post("https://charity-vercel-4ebc.vercel.app/products/update",{prodId:parseInt(product.id),quantity:parseInt(currentQuantity)},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-vercel.vercel.app/products/update",{prodId:parseInt(product.id),quantity:parseInt(currentQuantity)},{headers:{"Authorization":userToken}})
         setIsEditing(false)
         if(res.status===200){
             setTrigger(!trigger)
