@@ -47,7 +47,7 @@ const CampPage = () => {
 
   const getCampaign = async () => {
     try {
-      const res = await axios.post(`https://charity-vercel.vercel.app/campaigns/${id}`, { userId: parseInt(userId) },{headers:{"Authorization":userToken}});
+      const res = await axios.post(`https://kind-fund-backend.vercel.app/campaigns/${id}`, { userId: parseInt(userId) },{headers:{"Authorization":userToken}});
       setCampaign(res.data.campaign);
       setProducts(res.data.products);
       if (res.data.updates){

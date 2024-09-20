@@ -11,7 +11,7 @@ const Mydonations = () => {
     const userToken=localStorage.getItem("donToken")
     const getDonations=async()=>{
         try {
-            const res=await axios.post(`https://charity-vercel.vercel.app/donations/${userId}`,{items:items,page:page},{headers:{"Authorization":userToken}})
+            const res=await axios.post(`https://kind-fund-backend.vercel.app/donations/${userId}`,{items:items,page:page},{headers:{"Authorization":userToken}})
         setDonations(res.data.donations)
         setTotal(res.data.total)  
         } catch (error) {
