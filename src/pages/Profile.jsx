@@ -13,6 +13,7 @@ import {
 import axios from 'axios';
 import PieChart from '../Components/Piechart';
 import Barchart from '../Components/Barchart';
+import MyLoader from '../Components/Loader';
 
 ChartJS.register(
   CategoryScale,
@@ -80,7 +81,9 @@ const Profile = () => {
  
 
  
-  if(!user) return <span>Loading...</span>
+  if(!user) return <div className='w-full h-full flex items-center justify-center'>
+  <MyLoader/>
+</div>
   return (
     <div className="p-4">
       <h1 className="text-[16px] font-semibold border-b-2 border-b-orange-500 pb-1">Profile</h1>

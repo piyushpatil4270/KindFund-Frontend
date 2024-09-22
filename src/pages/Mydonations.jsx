@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Donation from "../Components/Donation"
+import MyLoader from '../Components/Loader'
 
 const Mydonations = () => {
     const [donations,setDonations]=useState(null)
@@ -22,7 +23,9 @@ const Mydonations = () => {
     useEffect(()=>{
     getDonations()
     },[page])
-    if(!donations) return <span>Loading...</span>
+    if(!donations) return <div className='w-full h-full flex items-center justify-center'>
+    <MyLoader/>
+  </div>
   return (
     <div className='w-full h-full flex flex-col gap-4 rounded-md p-4'>
     <span className='text-[14px] font-semibold border-b-2 border-b-orange-500 pb-1'>My Donations</span>

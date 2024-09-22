@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CampignCard from "../Components/MyCampaign"
+import MyLoader from '../Components/Loader'
 const MyCampaigns = () => {
     const [myCamps,setMycamps]=useState(null)
     const [items,setItems]=useState(5)
@@ -20,7 +21,9 @@ const MyCampaigns = () => {
     useEffect(()=>{
      getMyCampaigns()
     },[page])
-    if(!myCamps) return <span>Loading...</span>
+    if(!myCamps) return <div className='w-full h-full flex items-center justify-center'>
+    <MyLoader/>
+  </div>
   return (
     <div className='w-full h-full flex flex-col gap-4rounded-md p-4'>
     <span className='text-[14px] font-semibold border-b-2 border-b-orange-500 pb-1'>My Campaigns</span>

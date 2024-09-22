@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { toWords } from 'number-to-words';
 import axios from 'axios';
 import numeral from 'numeral';
+import MyLoader from '../Components/Loader';
 
 const CampPage = () => {
   const { id } = useParams();
@@ -67,7 +68,9 @@ const CampPage = () => {
     setShowUpdates(!showUpdates);
   };
 
-  if (!campaign) return <span>Loading...</span>;
+  if (!campaign) return <div className='w-full h-full flex items-center justify-center'>
+  <MyLoader/>
+</div>
 
   return (
     <div className='w-full h-full p-2'>

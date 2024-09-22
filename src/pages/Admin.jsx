@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CampaignCard from '../Components/AdminCard';
 import axios from 'axios';
+import MyLoader from '../Components/Loader';
 
 const Campaigns = () => {
   const userToken=localStorage.getItem("donToken")
@@ -19,8 +20,8 @@ const Campaigns = () => {
     getCampaigns();
   }, [trigger]);
 
-  if(!campaigns) return <div className='w-full h-full flex flex-col gap-4rounded-md p-4'>
-    <span>Loading...</span>
+  if(!campaigns) return <div className='w-full h-full flex items-center justify-center'>
+    <MyLoader/>
   </div>
 
   if(campaigns.length===0) return <div className='w-full h-full flex flex-col gap-4rounded-md p-4'>

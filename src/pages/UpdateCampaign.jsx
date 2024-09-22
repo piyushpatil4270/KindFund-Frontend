@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ProductCard from '../Components/UpdateProduct';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import MyLoader from '../Components/Loader';
 
 const CampaignDetailPage = () => {
   const [campaign, setCampaign] = useState(null);
@@ -55,7 +56,9 @@ const CampaignDetailPage = () => {
   }, [trigger]);
   
   if(error!=="") return <span>You are not authorized to access this campaign</span>
-  if (!campaign) return <span>Loading...</span>;
+  if (!campaign) return <div className='w-full h-full flex items-center justify-center'>
+  <MyLoader/>
+</div>
 
   return (
     <div className="w-full min-h-screen p-6 bg-gray-50">
