@@ -14,7 +14,7 @@ const Signup = ({ setIsAuth,setIsAdmin }) => {
         return;
       }
 
-      const res = await axios.post("https://kind-fund-backend.vercel.app/auth/signin", {
+      const res = await axios.post("http://localhost:5500/auth/signin", {
         email: email,
         password: password
       });

@@ -33,7 +33,7 @@ const CampaignDetails = () => {
         formData.append(`prods[${index}][amount]`, product.amount);
       });
 
-      const res = await axios.post('https://kind-fund-backend.vercel.app/campaigns/create',formData,{headers:{"Authorization":userToken}});
+      const res = await axios.post('http://localhost:5500/campaigns/create',formData,{headers:{"Authorization":userToken}});
       console.log('The data from campaign creation is ', res.data);
       if (res.status === 202) {
         alert(res.data);
