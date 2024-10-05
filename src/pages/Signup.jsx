@@ -14,7 +14,7 @@ const Signup = () => {
         alert("All fields are required")
         return
        }
-       const res=await axios.post("http://localhost:5500/auth/signup",{name:username,email:email,password:password})
+       const res=await axios.post("https://charity-frontend-orcin.vercel.app/auth/signup",{name:username,email:email,password:password})
        if(res.status===200||res.status===202){
         alert(res.data)
        }

@@ -18,7 +18,7 @@ const Payments = ({campaignId,amount,setAmount}) => {
         return;
       }
 
-      const amountString = amount.toFixed(2);
+      const amountString = amount.toFixed(2); 
       console.log("Formatted amount is ", amountString);
 
       return actions.order.create({
@@ -43,7 +43,7 @@ const Payments = ({campaignId,amount,setAmount}) => {
       const userId=localStorage.getItem("donId")
       console.log("userid is ",userId)
       try {
-        const res=await axios.post("http://localhost:5500/campaigns/donate",{campaignId:parseInt(campaignId),amount:amount,userId:parseInt(userId)},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-frontend-orcin.vercel.app/campaigns/donate",{campaignId:parseInt(campaignId),amount:amount,userId:parseInt(userId)},{headers:{"Authorization":userToken}})
         if( res.status===201){
           alert("Amount donated succesfully")
         }

@@ -14,7 +14,7 @@ const Signup = ({ setIsAuth,setIsAdmin }) => {
         return;
       }
 
-      const res = await axios.post("http://localhost:5500/auth/signin", {
+      const res = await axios.post("https://charity-frontend-orcin.vercel.app/auth/signin", {
         email: email,
         password: password
       });

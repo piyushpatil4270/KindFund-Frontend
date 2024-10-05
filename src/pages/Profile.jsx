@@ -40,7 +40,7 @@ const Profile = () => {
   const userId=localStorage.getItem("donId")
   const fetchUser=async()=>{
     try {
-        const res=await axios.post("http://localhost:5500/auth/getUser",{userId:parseInt(userId)},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-frontend-orcin.vercel.app/auth/getUser",{userId:parseInt(userId)},{headers:{"Authorization":userToken}})
         setUser(res.data)
         setUsername(res.data.name)
         setUseremail(res.data.email)
@@ -50,7 +50,7 @@ const Profile = () => {
   }
   const fetchUserData=async()=>{
     try {
-        const res=await axios.post("http://localhost:5500/campaigns/getUserData",{userId:parseInt(userId)},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-frontend-orcin.vercel.app/campaigns/getUserData",{userId:parseInt(userId)},{headers:{"Authorization":userToken}})
         setLaunched(res.data?.totalCamps===null?0:res.data.totalCamps)
         setTotalDonations(res.data?.totalDons===null?0:res.data.totalDons)
         setData(res.data.data)
@@ -62,7 +62,7 @@ const Profile = () => {
   }
   const handlePasswordChange = async() => {
     try {
-        const res=await axios.post("http://localhost:5500/auth/changePassword",{userId:parseInt(userId),oldPassword:oldPassword,newPassword:newPassword},{headers:{"Authorization":userToken}})
+        const res=await axios.post("https://charity-frontend-orcin.vercel.app/auth/changePassword",{userId:parseInt(userId),oldPassword:oldPassword,newPassword:newPassword},{headers:{"Authorization":userToken}})
     if(res.status<400){
         alert(res.data)
         setOldPassword("")

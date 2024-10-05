@@ -14,7 +14,7 @@ const BarChart = ({ monthlyData }) => {
     datasets: [
       {
         label: 'Donations',
-        data: monthlyData.map(monthData => monthData.totalAmount), // Ensure data is mapped correctly
+        data: monthlyData.map(monthData => monthData.totalAmount),
         backgroundColor: '#ec4f1d',
         borderWidth: 0,
       },
