@@ -9,7 +9,7 @@ const Campaigns = () => {
    const [trigger,setTrigger]=useState(true)
   const getCampaigns = async () => {
     try {
-      const res = await axios.get(`https://charity-frontend-orcin.vercel.app/campaigns/admin`,{headers:{"Authorization":userToken}});
+      const res = await axios.get(`https://kind-fund-backend.vercel.app/campaigns/admin`,{headers:{"Authorization":userToken}});
       setCampaigns(res.data);
     } catch (error) {
       console.log(error);

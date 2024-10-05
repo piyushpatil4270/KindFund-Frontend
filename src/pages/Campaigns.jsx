@@ -12,7 +12,7 @@ const Campaigns = () => {
   const [items,setItems]=useState(5)
   const getCampaigns = async () => {
     try {
-      const res = await axios.post(`https://charity-frontend-orcin.vercel.app/campaigns/all/${category}`,{items:items,page:page},{headers:{"Authorization":userToken}});
+      const res = await axios.post(`https://kind-fund-backend.vercel.app/campaigns/all/${category}`,{items:items,page:page},{headers:{"Authorization":userToken}});
       setCampaigns(res.data.campaigns);
       setTotal(res.data.total)
     } catch (error) {
