@@ -44,7 +44,7 @@ const Payments = ({campaignId,amount,setAmount}) => {
       console.log("userid is ",userId)
       try {
         const res=await axios.post("https://kind-fund-backend.vercel.app/campaigns/donate",{campaignId:parseInt(campaignId),amount:amount,userId:parseInt(userId)},{headers:{"Authorization":userToken}})
-        if( res.status===201){
+        if( res.status===202){
           alert("Amount donated succesfully")
         }
         setAmount(0);
