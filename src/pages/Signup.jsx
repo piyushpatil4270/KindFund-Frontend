@@ -23,6 +23,7 @@ const Signup = () => {
        }
    } catch (error) {
     console.log(error)
+    alert(error?.message)
    }
   };
 
