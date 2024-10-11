@@ -33,7 +33,7 @@ const Signup = ({ setIsAuth,setIsAdmin }) => {
       }
     } catch (error) {
       console.log(error);
-      alert(error?.message)
+      alert(error?.response?.data)
     }
   };
 
